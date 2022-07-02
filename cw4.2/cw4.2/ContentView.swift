@@ -16,7 +16,7 @@ struct ContentView: View {
     @State var new = ""
     
     // delete chosen
-    @Binding var choice : Int
+    @State var choice = 0
     
     var body: some View {
         VStack{
@@ -30,7 +30,7 @@ struct ContentView: View {
                         .frame(width: 50, height: 50)
                 Text(item)
                 }.onTapGesture {
-                    choice = choice + 1}
+                    choice = myGrocery.firstIndex(of: item) ?? 0}
             }
        
             // Bottom
