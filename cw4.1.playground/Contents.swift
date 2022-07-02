@@ -34,11 +34,11 @@ for i in Numbers1{
 
 // Bonus
 
-sentence =
+var ran_number = [3,7,4,29,50]
 
-for word in sentence{
-    if x % 2 == 0{
-        print(x)
+for digit in ran_number{
+    if digit % 2 == 0{
+        print(digit)
     }
 }
     

@@ -15,6 +15,8 @@ struct ContentView: View {
     //State var for textfield + button
     @State var new = ""
     
+    // delete chosen
+    @Binding var choice : Int
     
     var body: some View {
         VStack{
@@ -27,8 +29,8 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                 Text(item)
-                }
-            
+                }.onTapGesture {
+                    choice = choice + 1}
             }
        
             // Bottom
@@ -48,7 +50,7 @@ struct ContentView: View {
                 
                 // - button
                 Button {
-                    myGrocery.remove(at: 0)
+                    myGrocery.remove(at: choice)
                 } label: {
                     Image("remove") .resizable()
                         .frame(width: 50, height: 50)
@@ -66,3 +68,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
